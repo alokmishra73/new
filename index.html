@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Momoooo 💗</title>
+
+<style>
+* { box-sizing: border-box; }
+
+:root {
+  --pink: #ff4f87;
+  --deep: #c72c60;
+  --soft: #fff0f5;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: linear-gradient(145deg, #fff0f5, #ffd6e5, #fff7fa);
+  color: #79354e;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.page {
+  min-height: 100vh;
+  display: none;
+  padding: 24px 16px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page.active {
+  display: flex;
+  animation: appear .7s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  width: min(100%, 470px);
+  padding: 30px 22px;
+  border-radius: 30px;
+  background: rgba(255,255,255,.78);
+  border: 2px solid rgba(255,255,255,.9);
+  box-shadow: 0 18px 55px #e76b942c;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #c65a7c;
+  font-weight: bold;
+}
+
+h1, h2 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+h1 {
+  font-size: clamp(35px, 9vw, 49px);
+  line-height: 1.12;
+  margin: 18px 0;
+  color: #bd315f;
+}
+
+.subtitle {
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.couple {
+  font-size: clamp(70px, 18vw, 105px);
+  margin: 15px 0;
+  filter: drop-shadow(0 8px 10px #d94f7730);
+  animation: bob 2s ease-in-out infinite;
+}
+
+@keyframes bob {
+  50% { transform: translateY(-9px) rotate(2deg); }
+}
+
+.buttons {
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+  margin-top: 20px;
+}
+
+button {
+  font: inherit;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 14px 25px;
+  transition: transform .3s, box-shadow .3s;
+  touch-action: manipulation;
+}
+
+#yesBtn {
+  background: linear-gradient(135deg, #ff78a5, #ff3976);
+  color: white;
+  font-size: 19px;
+  box-shadow: 0 7px 22px #ff397650;
+  position: relative;
+  z-index: 2;
+  transform: scale(var(--yes-scale, 1));
+}
+
+#yesBtn:hover {
+  box-shadow: 0 10px 28px #ff397770;
+}
+
+#noBtn {
+  background: white;
+  color: #99546a;
+  border: 1px solid #f6cad8;
+  position: relative;
+  z-index: 3;
+}
+
+.hint {
+  font-size: 13px;
+  color: #ad6880;
+  margin-top: 5px;
+}
+
+.floating {
+  position: absolute;
+  bottom: -30px;
+  pointer-events: none;
+  animation: floatUp 7s linear forwards;
+  z-index: 1;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-115vh) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+/* Second page */
+#page2 {
+  background:
+    radial-gradient(ellipse at top, #fff1f6, transparent 65%),
+    linear-gradient(160deg, #ffd4e2, #fff0f6 60%, #ffc6d9);
+}
+
+.surprise {
+  font-size: 15px;
+  color: #b84b70;
+}
+
+.love-title {
+  font-size: clamp(39px, 10vw, 65px);
+  color: #e63870;
+  text-shadow: 0 5px 20px #ff83ab65;
+  animation: lovePop 1s cubic-bezier(.2, 1.6, .4, 1) both;
+}
+
+@keyframes lovePop {
+  from { opacity: 0; transform: scale(.3) rotate(-8deg); }
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+.big-heart {
+  font-size: 100px;
+  display: inline-block;
+  animation: heartbeat 1.1s infinite;
+  filter: drop-shadow(0 8px 18px #ff5c8a50);
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.14); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.09); }
+}
+
+.love-note {
+  line-height: 1.9;
+  font-size: 15px;
+  margin: 18px 0;
+}
+
+.primary {
+  background: linear-gradient(135deg, #ff78a5, #ff3976);
+  color: white;
+  box-shadow: 0 8px 22px #ff397640;
+  margin-top: 12px;
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+}
+
+.letter {
+  display: none;
+  text-align: left;
+  margin-top: 22px;
+  padding: 22px;
+  background: #fffaf5;
+  border-radius: 20px;
+  line-height: 1.9;
+  font-size: 14px;
+  animation: appear .7s ease;
+}
+
+.letter.open { display: block; }
+
+.letter h2 {
+  text-align: center;
+  color: #c72c60;
+}
+
+.letter strong { color: #bd315f; }
+
+.signature {
+  text-align: right;
+  font-family: Georgia, serif;
+  font-size: 19px;
+}
+
+.footer {
+  font-size: 12px;
+  opacity: .8;
+  margin-top: 24px;
+}
+
+@media (max-width: 380px) {
+  .card { padding: 25px 15px; }
+  .buttons { gap: 9px; }
+  button { padding: 12px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<section id="page1" class="page active">
+  <div class="card">
+    <div class="eyebrow">A tiny question for you 💌</div>
+
+    <div class="couple" aria-label="Cute couple">🥹💗</div>
+
+    <h1>Momoooo,<br>ek baat puchhu?</h1>
+
+    <p class="subtitle">
+      Do you want to watch<br>
+      <strong>ek special message</strong> from me? 🥺💕
+    </p>
+
+    <div class="buttons" id="buttonArea">
+      <button id="yesBtn" onclick="sayYes()">
+        YES, SHOW ME 💖
+      </button>
+
+      <button id="noBtn" onclick="sayNo()">
+        NO 🙈
+      </button>
+    </div>
+
+    <p class="hint" id="hint">Pleaseee, Momoooo 🥹👉👈</p>
+  </div>
+
+  <p class="footer">Made with love, just for you 🌷</p>
+</section>
+
+<!-- PAGE 2 -->
+<section id="page2" class="page">
+  <div class="card">
+    <div class="eyebrow">A little surprise for my favourite person</div>
+
+    <p class="surprise" id="surpriseText">Hehehe... you came! 🥹</p>
+
+    <h1 class="love-title">I Love You<br>Momoooo! 💗</h1>
+
+    <div class="big-heart">❤️</div>
+
+    <p class="love-note">
+      Meri cutie, meri jaan, meri Momoooo! 🧸<br>
+      Tumhari smile meri favourite hai.<br>
+      Tumhari happiness mere liye important hai.<br>
+      Aur tumhare liye mere dil mein bahut saara pyaar hai. 💕
+    </p>
+
+    <p class="love-note">
+      Aur haan... agar maine tumhe hurt kiya hai,
+      toh I'm genuinely sorry. No excuses, no pressure.
+      Tumhari feelings matter karti hain. ❤️
+    </p>
+
+    <button class="primary" id="letterBtn" onclick="toggleLetter()">
+      Read My Little Letter 💌
+    </button>
+
+    <div class="letter" id="letter">
+      <h2>Meri jaan, ❤️</h2>
+
+      Mujhe nahi pata ki tum ye padhkar kya feel karogi,
+      but main dil se kehna chahta hoon...
+
+      <p><strong>I am really, really sorry.</strong>
+      Maine tumhe hurt kiya. Mere gusse, mere words aur mere
+      behaviour ka koi excuse nahi hai. Tum woh sab deserve nahi karti thi.</p>
+
+      <p>Sabse zyada regret mujhe is baat ka hai ki jab tumhe meri
+      zarurat thi, main tumhare saath nahi tha. I'm sorry for making
+      you feel alone when you needed me the most.</p>
+
+      <p>Main sirf sorry bolkar sab normal karne ki expectation nahi
+      rakhna chahta. <strong>Mujhe apne actions se change dikhana hai.</strong>
+      Main apne gusse ko handle karna, bolne se pehle sochna,
+      aur tumhari baat bina defend kiye sunna seekhunga.</p>
+
+     
+
+      <p><strong>I love you, Momoooo.</strong> And I'm sorry that
+      my actions didn't always make you feel loved.
+      Tum mere saath raho ya na raho, I genuinely wish you happiness
+      and peace. ❤️</p>
+
+      <p><strong>I'm sorry, truly.</strong></p>
+
+      <div class="signature">— Tumhara Panda🐼</div>
+    </div>
+  </div>
+
+  <p class="footer">You are special. Always be happy, Momoooo 🌸</p>
+</section>
+
+<script>
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const hint = document.getElementById("hint");
+const buttonArea = document.getElementById("buttonArea");
+
+let noCount = 0;
+let yesScale = 1;
+
+const messages = [
+  "Areyyy, ek baar YES try karo na 🥺",
+  "Momoooo pleaseee 👉👈💕",
+  "Dekho YES kitna cute ho gaya 😭❤️",
+  "Achha baba, NO ko rehne do 😂💗",
+  "YES is waiting for youuu! 🫶"
+];
+
+function sayNo() {
+  noCount++;
+
+  // YES grows every time NO is pressed
+  yesScale = Math.min(yesScale + 0.17, 2.1);
+  yesBtn.style.setProperty("--yes-scale", yesScale);
+
+  hint.textContent = messages[
+    Math.min(noCount - 1, messages.length - 1)
+  ];
+
+  // Move NO to a random safe spot within its container
+  const maxX = Math.max(0, (buttonArea.clientWidth - noBtn.offsetWidth) / 2 - 5);
+  const maxY = 35;
+
+  noBtn.style.position = "absolute";
+  noBtn.style.left = "50%";
+  noBtn.style.top = "50%";
+  noBtn.style.transform =
+    `translate(calc(-50% + ${(Math.random() * 2 - 1) * maxX}px),
+               calc(-50% + ${(Math.random() * 2 - 1) * maxY}px))`;
+
+  // After repeated attempts, make YES even more tempting
+  if (noCount >= 4) {
+    yesBtn.textContent = "YES PLEASE 💖";
+  }
+
+  makeHearts(5);
+}
+
+function sayYes() {
+  const page1 = document.getElementById("page1");
+  const page2 = document.getElementById("page2");
+
+  page1.classList.remove("active");
+  page2.classList.add("active");
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  makeHearts(35);
+
+  document.getElementById("surpriseText").textContent =
+    "Awww, meri Momoooo is here! 🥹💕";
+}
+
+function toggleLetter() {
+  const letter = document.getElementById("letter");
+  const btn = document.getElementById("letterBtn");
+
+  letter.classList.toggle("open");
+
+  if (letter.classList.contains("open")) {
+    btn.textContent = "Close Letter 💗";
+
+    setTimeout(() => {
+      letter.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }, 100);
+  } else {
+    btn.textContent = "Read My Little Letter 💌";
+  }
+}
+
+function makeHearts(amount = 1) {
+  const emojis = ["💗", "💕", "💖", "❤️", "✨", "🌸"];
+
+  for (let i = 0; i < amount; i++) {
+    setTimeout(() => {
+      const heart = document.createElement("span");
+      heart.className = "floating";
+      heart.textContent = emojis[
+        Math.floor(Math.random() * emojis.length)
+      ];
+
+      heart.style.left = Math.random() * 95 + "vw";
+      heart.style.fontSize = (15 + Math.random() * 22) + "px";
+      heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 8500);
+    }, i * 45);
+  }
+}
+
+// Gentle floating hearts
+setInterval(() => makeHearts(1), 850);
+</script>
+
+</body>
+</html>
+
